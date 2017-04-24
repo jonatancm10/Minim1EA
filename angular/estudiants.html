@@ -1,0 +1,77 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="angularRoutingApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Estudiants</title>
+
+</head>
+<body ng-controller="estudiantsController">
+<!--<div id="routes">-->
+
+
+  </div>
+    <h3 class="text-center">ESTUDIANTS</h3>
+    <br>
+    <div class="container">
+    <div class="row">
+      <h3></h3>
+        <div class="col-sm-6 col-sm-offset-0">
+            <table class="table table-striped">
+                <tr class="info">
+                    <td><dt>Nom</dt></td>
+                    <td><dt>Direcció</dt></td>
+                    <td><dt>Tlf casa </dt></td>
+                    <td><dt>Tlf feina</dt></td>
+                    <td><dt>Estudis</dt></td>
+                </tr>
+                <tr ng-repeat="estudiant in estudiants" ng-click="selectEstudiant(estudiant)">
+                    <td>{{ estudiant.nom }}</td>
+                    <td>{{ estudiant.direccio }}</td>
+                    <td>{{ estudiant.telefons.casa }}</td>
+                    <td>{{ estudiant.telefons.feina }}</td>
+                    <td>{{ estudiant.estudis }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-4 col-sm-offset-2 text-center">
+            <form name="myForm">
+                <h3>Dades Estudiant</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg text-center" placeholder="Nom" ng-model="newEstudiant.nom" required>
+                    <br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Direcció" ng-model="newEstudiant.direccio" required>
+                    <br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Teléfon casa" ng-model="newEstudiant.telefons.casa" required>
+                    <br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Teléfon feina" ng-model="newEstudiant.telefons.feina" required>
+                    <br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Estudis" ng-model="newEstudiant.estudis" required>
+                    <br>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg" ng-click="registrarEstudiant()" ng-disabled="myForm.$invalid || selected">Registrar</button>
+                <button type="submit" class="btn btn-warning btn-lg" ng-click="modificarEstudiant(newEstudiant)" ng-disabled="!newEstudiant.nom || !newEstudiant.direccio || !newEstudiant.telefons.casa || !newEstudiant.telefons.feina || !newEstudiant.estudis || !selected">Modificar</button>
+                <button type="submit" class="btn btn-danger btn-lg" ng-click="deleteEstudiant(newEstudiant)" ng-disabled="!newEstudiant.nom || !newEstudiant.direccio || !newEstudiant.telefons.casa || !newEstudiant.telefons.feina || !newEstudiant.estudis || !selected">Borrar</button>
+            </div>
+        </form>
+          <h3> FILTRATGE DE ESTUDIANTS: </h3>
+           <a href="#filtrar2" data-clicktrack="true">  <button class="btn btn-primary btn-lg" >Filtrar</button></a>
+
+      </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-body">
+      <h5 class="text-center">UPC-EETAC-EA</h5>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

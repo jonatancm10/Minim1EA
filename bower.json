@@ -1,0 +1,25 @@
+{
+  "name": "minimo",
+  "description": "examen de minimos 1",
+  "main": "index.js",
+  "authors": [
+    "JonatanCollado"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jonatancm10",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+"bootstrap": "3.0.0",
+"angular": "1.6.4",
+"angular-route": "1.6.4",
+"bootstrap-social": "~4.8.0",
+"flot.tooltip": "~0.8.4",
+}
+}

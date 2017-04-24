@@ -1,0 +1,16 @@
+{
+  "name": "minimo 1 EA",
+  "description": "asignaturas y alumnos",
+  "main": "server.js",
+  "authors": [
+    "Jonatan"
+  ],
+  "dependencies": {
+  "bootstrap": "3.0.0",
+  "angularjs": "1.2.16",
+  "angular-route": "1.2.6",
+  "bootstrap-social": "~4.8.0",
+  "flot.tooltip": "~0.8.4",
+  "font-awesome": "fontawesome#^4.6.3"
+  }
+}
